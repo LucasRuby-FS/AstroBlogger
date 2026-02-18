@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPost from '../../components/BlogPost.astro';
+export async function getStaticPaths() {
+  const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
+
+  return [
+    {params: {tag: "AI"}, props: {posts: allPosts}},
+        {params: {tag: "learning"}, props: {posts: allPosts}},
+    {params: {tag: "reasoning"}, props: {posts: allPosts}},
+    {params: {tag: "brain"}, props: {posts: allPosts}},
+    {params: {tag: "intelligence"}, props: {posts: allPosts}},
+    {params: {tag: "human"}, props: {posts: allPosts}},
+    {params: {tag: "behavior"}, props: {posts: allPosts}},
+        {params: {tag: "views"}, props: {posts: allPosts}},
+            {params: {tag: "twisting"}, props: {posts: allPosts}},
+            {params: {tag: "API"}, props: {posts: allPosts}},
+            {params: {tag: "handle"}, props: {posts: allPosts}},
+            {params: {tag: "work"}, props: {posts: allPosts}},
+            {params: {tag: "verify"}, props: {posts: allPosts}},
+  ];
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+const filteredPosts = posts.filter((post: any) => post.frontmatter.tags?.includes(tag));
+---
+<BaseLayout pageTitle={tag}>
+  <p>Posts tagged with {tag}</p>
+    <ul>
+{filteredPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title}/>)}
+  </ul>
+</BaseLayout>

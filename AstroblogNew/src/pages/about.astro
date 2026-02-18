@@ -1,0 +1,15 @@
+---
+import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const {pageTitle} = Astro.props;
+---
+
+<BaseLayout pageTitle={pageTitle}>
+		<h1>About me: The Blogger:</h1>
+		<h2>Technology is always changing!</h2>
+        <p>Welcome to my blog where I post
+			information about technology topics that are currently the hot topics that are talked about.  </p>
+		<p>There are so many things I can talk about, and the topics chosen are important information that every developer should know!</p>
+<p>First topic is "AI focus".</p>
+<p>The second is "What is intelligence".</p><p>The third is "AI is taking over".</p> <p>And the most recent one: "How to Build an API. A Step-by-Step Guide."</p>
+</BaseLayout>

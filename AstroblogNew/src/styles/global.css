@@ -1,0 +1,64 @@
+/* nav styles */
+.nav-links {
+  width: 100%;
+  display: none;
+  margin: 0;
+}
+
+.nav-links a {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  text-decoration: none;
+  font-size: medium;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #1a4b22;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  background-color: #76ff8d;
+}
+
+:has(.menu[aria-expanded="true"]) .nav-links {
+  display: unset;
+}
+
+@media screen and (min-width: 636px) {
+  .nav-links {
+    margin-left: 5em;
+    display: block;
+    position: static;
+    width: auto;
+    background: none;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    padding: 15px 20px;
+  }
+}
+h1 {
+  color: rgb(38, 80, 66);
+  text-align: center;
+  font-size: large;
+}
+p {
+  color: rgb(52, 69, 63);
+  text-align: center;
+}
+body {
+  background-color: rgb(194, 255, 194);
+}
+h2 {
+  text-align: center;
+  color: rgb(52, 69, 63);
+  font-weight: bold;
+  font-size: x-large;
+  text-decoration: underline;
+}
+.center-img {
+  display: block;
+  margin: 0 auto;
+}
